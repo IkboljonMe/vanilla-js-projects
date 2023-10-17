@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Karla|Roboto|Lato");
+
+body {
+  font-family: "Karla", sans-serif;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 575px) {
+  input[type="submit"] {
+    margin-top: 1em;
+    width: 20%;
+  }
+}
+@media (min-width: 1000px) {
+  input[type="submit"] {
+    width: 10%;
+  }
+}
