@@ -1,43 +1,40 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Static Websites to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main  # Adjust this branch as needed
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Deploy Website 1 to GitHub Pages
+      run: |
+        # Replace project-folder-1 with the folder name of your first website.
+        cd todos
+        git init
+        git add .
+        git commit -m "Deploy to GitHub Pages"
+        git branch -M gh-pages
+        git remote add origin https://github.com/IkboljonMe/js-projects# Replace with your GitHub username and repository name
+        git push -f origin gh-pages
+      continue-on-error: true
+
+    - name: Deploy Website 2 to GitHub Pages
+      run: |
+        # Replace project-folder-2 with the folder name of your second website.
+        cd quiz-app
+        git init
+        git add .
+        git commit -m "Deploy to GitHub Pages"
+        git branch -M gh-pages
+        git remote add origin https://github.com/IkboljonMe/js-projects # Replace with your GitHub username and repository name
+        git push -f origin gh-pages
+      continue-on-error: true
+
+    # Add more "Deploy Website" steps for additional websites as needed.
