@@ -38,6 +38,7 @@ function removeItem(e) {
     let item = e.target.parentElement;
     removeFromLocalStorage(item);
     item.remove();
+    checkLocalStorage();
   }
 }
 function searchItem() {
@@ -45,7 +46,8 @@ function searchItem() {
   let items = todoItems.getElementsByTagName("li");
 
   for (let i = 0; i < items.length; i++) {
-    let val = items[i].textContent.toUpperCase();
+    // only the todo text, not the "Delete" button text
+    let val = items[i].firstChild.textContent.toUpperCase();
     if (val.indexOf(searchInput) !== -1) {
       items[i].style.display = "block";
     } else {

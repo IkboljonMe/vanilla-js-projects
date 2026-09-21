@@ -27,8 +27,9 @@ function init(e) {
     myBudget.textContent = budget;
     amountLeft.textContent = budget;
   } else {
+    document.getElementById("message-first").style.display = "block";
     document.getElementById("message-first").textContent =
-      "This field cant't be left empty";
+      "This field can't be left empty";
     setTimeout(function () {
       document.getElementById("message-first").style.display = "none";
     }, 2000);
@@ -46,6 +47,8 @@ function addExpence(e) {
   e.preventDefault();
   let name = expenceName.value,
     amount = expenceAmount.value;
+  // don't change the budget if name or amount is missing
+  if (name === "" || amount === "") return;
   formSecond.reset();
   expenceName.focus();
   addToList(name, amount);

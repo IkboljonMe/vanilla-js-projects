@@ -41,7 +41,7 @@ const questions = {
       "Only a for statement uses a callback function",
       "A for statement is generic, but a forEach statement can be used only with an array",
       "Only a forEach statement lets you specify your own iterator.",
-      "A forEach statement is generic, but a for statement ca be used only with an array",
+      "A forEach statement is generic, but a for statement can be used only with an array",
     ],
     "A for statement is generic, but a forEach statement can be used only with an array",
   ],
@@ -52,7 +52,7 @@ let indicatorWidth = 0;
 //EVENT LISTENERS
 document.addEventListener("DOMContentLoaded", loadFirstQuestion);
 
-//FUNTIONS
+//FUNCTIONS
 function loadFirstQuestion() {
   // load question
   let firstQuestion = Object.keys(questions)[0];
@@ -67,11 +67,10 @@ function loadFirstQuestion() {
 
   // compare the clicked option with correct answer & update the score
   function onOptionSelect(e) {
+    // ignore clicks on the gaps between options
+    if (e.target.tagName !== "LI") return;
     let optionSelected = e.target.textContent;
-    console.log(options);
-    console.log(e.target);
-    let questionDisplayed =
-      e.target.parentElement.previousElementSibling.textContent;
+    let questionDisplayed = question.textContent;
     let correctAnswer = questions[questionDisplayed][1];
     if (optionSelected == correctAnswer) {
       incrementScore();
@@ -100,8 +99,10 @@ function loadFirstQuestion() {
       // if all questions loaded - load the first question and display the final score
       let lastScore = scoreValue;
       resetScore();
-      options.innerHTML = "";
-      loadFirstQuestion();
+      // go back to the first question (without calling loadFirstQuestion again,
+      // because that would add one more click listener every round)
+      question.textContent = questionsArray[0];
+      loadOptions(questionsArray[0]);
       let messageString =
         "You scored: " + `${lastScore}` + "/" + `${questionsArray.length}`;
       message.textContent = messageString;

@@ -24,7 +24,7 @@ let words = [
   "books",
   "education",
   "amour",
-  "delibrate",
+  "deliberate",
   "protein",
   "partner",
   "empathy",
@@ -86,13 +86,13 @@ window.addEventListener("load", init);
 inputWord.addEventListener("input", startMatch);
 difficultyLevel.addEventListener("change", changeLevel);
 
-// FUCNTIONS
+// FUNCTIONS
 function init() {
   time.textContent = currentLevel;
   showWord();
   // call the countdown function every second
   setInterval(countdown, 1000);
-  // cheking the game status every 0.1s
+  // checking the game status every 0.1s
   setInterval(checkStatus, 100);
 }
 function showWord() {
@@ -102,7 +102,6 @@ function showWord() {
 }
 function countdown() {
   if (timeCount > 0) {
-    // console.log(timeCount);
     timeCount--;
     timeLeft.textContent = timeCount;
   } else if (timeCount === 0) {
@@ -130,24 +129,12 @@ function startMatch() {
 }
 function changeLevel() {
   let level = this.options[this.selectedIndex].value;
-  if (level === "Medium") {
-    inputWord.focus();
-    scoreCount = 0;
-    message.textContent = "";
-    isPlaying = true;
-    currentLevel = levels.medium;
-    time.textContent = currentLevel;
-    timeCount = currentLevel + 1;
-    startMatch();
-  }
-  if (level === "Hard") {
-    inputWord.focus();
-    scoreCount = 0;
-    message.textContent = "";
-    isPlaying = true;
-    currentLevel = levels.hard;
-    time.textContent = currentLevel;
-    timeCount = currentLevel + 1;
-    startMatch();
-  }
+  inputWord.focus();
+  scoreCount = 0;
+  score.textContent = scoreCount;
+  message.textContent = "";
+  isPlaying = true;
+  currentLevel = levels[level.toLowerCase()];
+  time.textContent = currentLevel;
+  timeCount = currentLevel + 1;
 }
