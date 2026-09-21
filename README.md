@@ -1,72 +1,44 @@
-# Vanilla JavaScript Projects Repository
+# Vanilla JS Projects
 
-Welcome to the Vanilla JavaScript Projects Repository! This repository contains a collection of small projects built using plain JavaScript, HTML, and CSS. Each project is designed to help you improve your JavaScript skills and explore various aspects of web development.
-
-## Table of Contents
-
-- [Projects](#projects)
-- [Getting Started](#getting-started)
-- [Contribution Guidelines](#contribution-guidelines)
-- [TODOS](#todos)
+This is a collection of small web projects I made with plain HTML, CSS and JavaScript, without any frameworks. I built them in 2023 to practice working with the DOM, events and localStorage.
 
 ## Projects
 
-1. [**To-Do App**](https://github.com/IkboljonMe/vanilla-js-projects/tree/main/todos)
+| Project | What it does |
+| --- | --- |
+| [To-Do App](todos/) | Add and delete tasks, search through them. Tasks are saved in localStorage. |
+| [Quiz App](quiz-app/) | A short multiple choice quiz about JavaScript that shows your score at the end. |
+| [Drag n Drop](drag-n-drop/) | Drag an image card between boxes using the HTML Drag and Drop API. |
+| [Weekly Budget App](weekly-budget-app/) | Set a weekly budget, add expenses and see how much money is left. |
+| [Speed Typing Game](speed-typing-game/) | Type the shown word before the time runs out. Has three difficulty levels. |
 
-- A simple to-do list application where you can add, delete, and mark tasks as complete.
+The Weekly Budget and Drag n Drop projects are based on a tutorial by [Aman Maharshi](https://github.com/aman-maharshi).
 
-2. [**Quiz App**](https://github.com/IkboljonMe/vanilla-js-projects/tree/main/quiz-app)
+## Built with
 
-- Create and take quizzes with this interactive quiz application.
+- HTML
+- CSS
+- JavaScript (no frameworks)
+- Bootstrap from a CDN (only for the To-Do, Weekly Budget and Speed Typing projects)
 
-3. [**Drag and Drop**](https://github.com/IkboljonMe/vanilla-js-projects/tree/main/drag-n-drop)
+## How to run
 
-- An interactive project that allows you to drag and drop elements within a web page.
-
-4. [**Weekly Budget App**](https://github.com/IkboljonMe/vanilla-js-projects/tree/main/weekly-budget-app)
-
-- Keep track of your weekly income and expenses with this budget tracking application.
-
-5. [**Speed Typing Game**](https://github.com/IkboljonMe/vanilla-js-projects/tree/main/speed-typing-game)
-
-- Test your typing speed and accuracy with this fun typing game.
-
-Each project has its own folder in the `projects` directory. Click on the project links to access the source code and try them out.
-
-## Getting Started
-
-To get started with any of these projects, follow these general steps:
-
-1. Clone this repository to your local machine:
+1. Clone the repo:
 
    ```bash
-   git clone https://github.com/your-username/vanilla-js-projects.git``
-
+   git clone https://github.com/IkboljonMe/vanilla-js-projects.git
    ```
 
-2. Navigate to the project folder you're interested in:
+2. Go into the folder of the project you want to try, for example:
 
-   bashCopy code
+   ```bash
+   cd vanilla-js-projects/todos
+   ```
 
-   `cd vanilla-js-projects/projects/project-name`
+3. Open `index.html` in your browser. You can also use the Live Server extension in VS Code.
 
-3. Open the `index.html` file in your web browser to see the project in action.
+There is nothing to install. Some styles and fonts load from a CDN, so you need internet for them.
 
-Feel free to explore the source code, experiment with the projects, and make any modifications to suit your learning and development needs.
+---
 
-## Contribution Guidelines
-
-If you'd like to contribute to this repository by adding more projects or improving existing ones, please follow these guidelines:
-
-1.  Fork the repository and create a new branch for your contribution.
-2.  Ensure that your project follows best practices, is well-documented, and includes a README.md file explaining how to use it.
-3.  Make sure your code is clean and adheres to good coding standards.
-4.  Submit a pull request with a clear description of your changes and improvements.
-
-Your contributions are highly appreciated!
-
-## TODOS
-
-- [ ] Add more projects
-- [ ] Github Actions & Pages for development
-- [ ] Optimize code, without any additional packages
+Made by [IkboljonMe](https://github.com/IkboljonMe)
